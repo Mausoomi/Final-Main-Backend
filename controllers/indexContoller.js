@@ -1429,12 +1429,11 @@ exports.Make_Payment = catchAsyncErrors(async (req, res, next) => {
     const customerIp = req.clientIp;
     const extraorderID = generateTransactionID();
     const orderCreateRequest = {
-      continueUrl: `http://localhost:3001/ConfirmBooking`,
+      // continueUrl: `http://localhost:3001/ConfirmBooking`,
       // continueUrl: `https://speakable.online:3001/ConfirmBooking`,
-      // continueUrl: `https://main--speakable-new.netlify.app/ConfirmBooking`,
-      // notifyUrl:
-      //   "https://main--speakable-new.netlify.app/Payment_Notification",
-      notifyUrl: "http://localhost:3000/Payment_Notification",
+      continueUrl: `https://main--speakable.netlify.app/ConfirmBooking`,
+      notifyUrl: "https://final-main-backend.onrender.com/Payment_Notification",
+      // notifyUrl: "http://localhost:3000/Payment_Notification",
 
       customerIp,
       merchantPosId: "475638",
